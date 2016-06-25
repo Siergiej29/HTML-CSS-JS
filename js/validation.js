@@ -12,6 +12,9 @@ function Modal() {
   var login = $("#login");
   var password = $("#passw");
   $("#own-modal").css("display", "block");
+  
+  $(".login-name").text(login);
+  $(".pass-name").text(password);
   $(close).click(function() {
     $(modal).css("display","none");
   });

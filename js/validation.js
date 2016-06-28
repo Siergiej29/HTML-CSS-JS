@@ -2,7 +2,6 @@ $(document).ready(function() {
   $(".log-in-btn").click(function(event) {
   event.preventDefault();
   validateForm(); 
-    // WAŻNE !!!!! ten modal powinien byc raczej w ifie wersji true, ale narazie jest tu bo chce się pochwalić :D
   });
 });
 
@@ -11,10 +10,9 @@ function Modal() {
   var close = document.getElementById("close")[0];
   var login = $("#login");
   var password = $("#passw");
-  $("#own-modal").css("display", "block");
-  
-  $(".login-name").text(login);
-  $(".pass-name").text(password);
+  $("#own-modal").show();
+  $(".login-name").text(login.val());
+  $(".pass-name").text(password.val());
   $(close).click(function() {
     $(modal).css("display","none");
   });
@@ -35,6 +33,3 @@ function validateForm() {
   }
 }
 
-//$("button[type="submit"]").removeAttr("data-toogle");
-//$("button[type="submit"]").attr("data-toogle","modal");
-//$(".bs-example-modal-sm").modal(show: false);
